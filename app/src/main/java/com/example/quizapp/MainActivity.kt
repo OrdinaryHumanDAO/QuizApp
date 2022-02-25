@@ -15,10 +15,11 @@ import com.example.quizapp.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
     private var rightAnswer : String? = null
     private var rightAnswerCount = 0
     private var quizCount = 1
-    private val QUIZ_COUNT = 16
+    private val QUIZ_COUNT = 10
 
     private val quizAnswer = listOf(
         "西村重樹", "中西緑", "小山民", "浦田直樹", "風間俊介", "中山沙弥子",
@@ -26,25 +27,25 @@ class MainActivity : AppCompatActivity() {
         "恒松菜々美", "砂川真理", "仙頭保枝",  "西村健佑"
     )
 
-    private val quizProblem = listOf(
-        listOf(R.drawable.syuou1, "西村重樹"),
-        listOf(R.drawable.syuou2, "中西緑"),
-        listOf(R.drawable.syuou3, "小山民"),
-        listOf(R.drawable.syuou4, "浦田直樹"),
-        listOf(R.drawable.syuou5, "風間俊介"),
-        listOf(R.drawable.syuou6, "中山沙弥子"),
-        listOf(R.drawable.syuou7, "西辻慎太郎"),
-        listOf(R.drawable.syuou8, "織田卓"),
-        listOf(R.drawable.syuou9, "壽山雅美"),
-        listOf(R.drawable.syuou10, "船垣雅和"),
-        listOf(R.drawable.syuou11, "南部あかね"),
-        listOf(R.drawable.syuou12, "森本勝也"),
-        listOf(R.drawable.syuou13, "恒松菜々美"),
-        listOf(R.drawable.syuou14, "砂川真理"),
-        listOf(R.drawable.syuou15, "仙頭保枝"),
-        listOf(R.drawable.syuou16, "西村健佑"),
+    private val FruitEnglishQuizAnswer = listOf(
+        "りんご", "いちご", "オレンジ", "キウィ", "グレープフルーツ",
+        "サクランボ", "パイナップル", "バナナ", "レモン", "マスクメロン"
     )
-    private var quizProblemShuffle = quizProblem.shuffled()
+
+    private val FruitEnglishQuizProblem = listOf(
+        listOf("apple", "りんご"),
+        listOf("strawberry", "いちご"),
+        listOf("orange", "オレンジ"),
+        listOf("kiwi", "キウィ"),
+        listOf("grapefruit", "グレープフルーツ"),
+        listOf("cherry", "サクランボ"),
+        listOf("pineapple", "パイナップル"),
+        listOf("banana", "バナナ"),
+        listOf("lemon", "レモン"),
+        listOf("muskmelon", "マスクメロン"),
+    )
+
+    private var quizProblemShuffle = FruitEnglishQuizProblem.shuffled()
 
     private val timer = object :CountDownTimer(10000,100) {
         //途中経過・残り時間
@@ -66,8 +67,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_main)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -88,18 +87,17 @@ class MainActivity : AppCompatActivity() {
         // クイズを１問取り出す
         val quiz = quizProblemShuffle[quizCount - 1]
 
-            // 問題をセット
-        binding.imageView2.setImageResource(quiz[0] as Int)
-
+        // 問題をセット
+        binding.problemText.text = quiz[0]
 
         // 正解をセット
         rightAnswer = quiz[1].toString()
 
         // 正解と選択肢３つをシャッフル
-        val l = quizAnswer.indexOf(quiz[1])
-        var i = quizAnswer.filter { it != quiz[1] }
+        val l = FruitEnglishQuizAnswer.indexOf(quiz[1])
+        var i = FruitEnglishQuizAnswer.filter { it != quiz[1] }
         i = i.shuffled()
-        var j = listOf(quizAnswer[l], i[0], i[1], i[2])
+        var j = listOf(FruitEnglishQuizAnswer[l], i[0], i[1], i[2])
         j = j.shuffled()
 
         // 正解と選択肢をセット

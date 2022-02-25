@@ -12,7 +12,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="名前当てクイズ"
+        android:text="英単語クイズ"
         android:textSize="34sp" />
 
     <Button

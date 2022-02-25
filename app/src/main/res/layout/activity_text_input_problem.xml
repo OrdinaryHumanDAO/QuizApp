@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".TextInputProblem"
+    android:orientation="vertical"
+    android:gravity="center|top"
+    tools:ignore="UsingOnClickInXml">
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="left"
+        android:background="#0000"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/icon_003280_256"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/countLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/count_label"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:id="@+id/iV"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        tools:srcCompat="@tools:sample/avatars"/>
+
+    <EditText
+        android:id="@+id/et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="@string/name" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/answer"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:onClick="checkInputTextAnswer"/>
+
+    <ProgressBar android:id="@+id/progressbar"
+        android:layout_height="10dp"
+        android:layout_width="300dp"
+        android:layout_marginTop="50dp"
+        android:indeterminate="false"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01" />
+
+</LinearLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center|top"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    tools:ignore="UsingOnClickInXml">
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="left"
+        android:background="#0000"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/icon_003280_256"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/countLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/count_label"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/answerBtn1"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="80dp"
+        android:onClick="checkAnswer"
+        android:text="@string/btn_answer" />
+
+    <Button
+        android:id="@+id/answerBtn2"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="6dp"
+        android:onClick="checkAnswer"
+        android:text="@string/btn_answer" />
+
+    <Button
+        android:id="@+id/answerBtn3"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="6dp"
+        android:onClick="checkAnswer"
+        android:text="@string/btn_answer" />
+
+    <Button
+        android:id="@+id/answerBtn4"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="6dp"
+        android:onClick="checkAnswer"
+        android:text="@string/btn_answer" />
+
+    <ProgressBar android:id="@+id/progressbar"
+        android:layout_height="10dp"
+        android:layout_width="300dp"
+        android:layout_marginTop="0dp"
+        android:indeterminate="false"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01" />
+
+</LinearLayout>

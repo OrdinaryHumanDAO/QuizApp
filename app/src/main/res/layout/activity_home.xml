@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:ignore="UsingOnClickInXml">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="名前当てクイズ"
+        android:textSize="34sp" />
+
+    <Button
+        android:id="@+id/btnChoiceStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:text="四択クイズ" />
+
+    <Button
+        android:id="@+id/btnInputStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:text="入力クイズ" />
+
+    <Button
+        android:id="@+id/btnFlashCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:text="フラッシュカード" />
+
+</LinearLayout>

@@ -21,12 +21,6 @@ class MainActivity : AppCompatActivity() {
     private var quizCount = 1
     private val QUIZ_COUNT = 10
 
-    private val quizAnswer = listOf(
-        "西村重樹", "中西緑", "小山民", "浦田直樹", "風間俊介", "中山沙弥子",
-        "西辻慎太郎", "織田卓", "壽山雅美", "船垣雅和", "南部あかね", "森本勝也",
-        "恒松菜々美", "砂川真理", "仙頭保枝",  "西村健佑"
-    )
-
     private val FruitEnglishQuizAnswer = listOf(
         "りんご", "いちご", "オレンジ", "キウィ", "グレープフルーツ",
         "サクランボ", "パイナップル", "バナナ", "レモン", "マスクメロン"
@@ -129,10 +123,10 @@ class MainActivity : AppCompatActivity() {
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
         builder.setTitle(alertTitle)
         builder.setMessage("答え : $rightAnswer")
-        builder.setPositiveButton("OK",
-            DialogInterface.OnClickListener { dialogInterface, i ->
-                checkQuizCount()
-            })
+        builder.setPositiveButton("OK"
+        ) { _, _ ->
+            checkQuizCount()
+        }
         builder.setCancelable(false)
         builder.show()
     }
@@ -144,12 +138,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ResultActivity::class.java)
             intent.putExtra("RIGHT_ANSWER_COUNT", rightAnswerCount)
             startActivity(intent)
-//            Handler(Looper.getMainLooper()).postDelayed({
-//                quizCount = 1
-//                quizProblemShuffle = quizProblemShuffle.shuffled()
-//                rightAnswerCount = 0
-//                showNextQuiz()
-//            }, 300)
             Handler(Looper.getMainLooper()).postDelayed({
                 finish()
             }, 300)
